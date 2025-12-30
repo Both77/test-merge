@@ -1,0 +1,196 @@
+
+/* Full screen layout using the deep navy color */
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0f172a; /* Deep navy background from your dashboard */
+  color: #f1f5f9;
+  overflow: hidden;
+}
+
+/* Animated glow effect in the background */
+.bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.1), transparent 40%);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* Left Panel - Branding Area */
+.left {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+  background: linear-gradient(135deg, #161e2d, #0f172a); /* Sidebar colors */
+  z-index: 1;
+}
+
+.left h1 {
+  color: #38bdf8; /* LibrarySys Blue */
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.left p {
+  color: #94a3b8;
+  font-size: 1.2rem;
+}
+
+/* Right Panel - Form Area */
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+
+.card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background: #1e293b; /* Slate card background */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+/* Form Fields */
+.field {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.field input {
+  width: 100%;
+  padding: 14px;
+  background: #0f172a; /* Inner input navy */
+  border: 1px solid #334155;
+  border-radius: 12px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.field input:focus {
+  border-color: #38bdf8;
+}
+
+.field label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #94a3b8;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.field input:focus + label,
+.field input:valid + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  background: #1e293b; /* Match card background */
+  padding: 0 6px;
+  color: #38bdf8;
+}
+
+.eye {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  filter: grayscale(1);
+}
+
+/* Remember me checkbox */
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* Primary Button - Blue Gradient */
+button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #3b82f6;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Modes Switch */
+.switch {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.switch span {
+  color: #38bdf8;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Feedback messages */
+.error { color: #f87171; font-size: 13px; text-align: center; margin-top: 15px; }
+.success { color: #4ade80; font-size: 13px; text-align: center; margin-top: 15px; }
+
+/* Strength bar */
+.strength-bar {
+  height: 4px;
+  background: #334155;
+  border-radius: 2px;
+  margin: -15px 0 20px;
+  overflow: hidden;
+}
+
+.strength-bar div {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+@media (max-width: 900px) {
+  .left { display: none; }
+  .container { background: #0f172a; }
+}
